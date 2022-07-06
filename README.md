@@ -24,3 +24,14 @@ For now the user has to run these commands manually in an iterative fashion sinc
 There will be 2 main output files of the process:
 * stage1.png (this includes the inner square of 1-4)
 * final.png (this includes the full outpainting of 1-13)
+
+### Example output
+
+#### Original image
+![original](og.jpg)
+
+#### After step 5
+![after step 5](stage1.jpg)
+
+#### Final image
+![final](final.jpg)
