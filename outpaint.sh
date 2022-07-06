@@ -24,16 +24,16 @@ convert o3.png front.png -gravity center -background None -layers Flatten o4.png
 convert o4.png -gravity southwest -crop 1024x1024+0+0 +repage 5.png
 # now combine the 1st and 2nd image
 convert 5.webp -gravity southwest -background none -extent 1912x1912 front.png
-convert o4.png front.png -gravity center -background None -layers Flatten o5.png
+convert o4.png front.png -gravity center -background None -layers Flatten stage1.png
 
 # expand to 3x3 stop here if you only want 2x2
-convert o5.png -gravity center -background none -extent 2868x2868 stage1.png
+convert stage1.png -gravity center -background none -extent 2868x2868 o5.png
 
 # crop west corner and infill
-convert stage1.png -gravity west -crop 1024x1024+0+0 +repage 6.png
+convert o5.png -gravity west -crop 1024x1024+0+0 +repage 6.png
 # now combine the 1st and 2nd image
 convert 6.webp -gravity west -background none -extent 2868x2868 front.png
-convert stage1.png front.png -gravity center -background None -layers Flatten o6.png
+convert o5.png front.png -gravity center -background None -layers Flatten o6.png
 
 # crop southwest corner and infill
 convert o6.png -gravity southwest -crop 1024x1024+0+0 +repage 7.png
@@ -72,7 +72,7 @@ convert 12.webp -gravity north -background none -extent 2868x2868 front.png
 convert o11.png front.png -gravity center -background None -layers Flatten o12.png
 
 # crop northwest corner and infill
-convert o12.png -gravity northwest -crop 1024x1024+0+0 +repage n.png
+convert o12.png -gravity northwest -crop 1024x1024+0+0 +repage 13.png
 # now combine the 1st and 2nd image
 convert 13.webp -gravity northwest -background none -extent 2868x2868 front.png
 convert o12.png front.png -gravity center -background None -layers Flatten final.png
