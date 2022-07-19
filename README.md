@@ -35,3 +35,17 @@ There will be 2 main output files of the process:
 
 #### Final image
 ![final](final.jpg)
+
+## Dalle2 zoom outpainting.ipynb
+### Instructions
+[This jupyter notebook](Dalle2 zoom outpainting.ipynb) can be used to generate animated zoom outpainting.
+Detailed instructions are included within.
+
+To build and start a docker container that includes all the dependencies run
+
+    docker-compose up --build notebook
+
+### Illustration
+![Illustration of zoom outpainting results](outpaint.gif)
+
+See mp4 version of the results [here](https://youtube.com/shorts/AkGObHWOT50?feature=share).
