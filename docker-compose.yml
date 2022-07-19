@@ -3,7 +3,7 @@ services:
   notebook:
     build:
       context: .
-      dockerfile: ./notebook.dockerfile
+      dockerfile: ./dockerfile
       target: notebook
     expose:
       - "8888"
@@ -11,8 +11,5 @@ services:
     ports:
       - "8888:8888"
     volumes:
-      - ~/.ssh:/home/jovyan/.ssh
-      - ~/code/py/ipynb:/home/jovyan/work:rw
       - ~/Downloads:/Downloads:rw
       - ~/Documents:/Documents:rw
-      - ~/git:/git:rw
